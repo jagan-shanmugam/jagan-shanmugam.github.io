@@ -1,5 +1,5 @@
 # Chat-with-my-profile
-Chat with my Github Repos and Resume
+Know me better by chatting with my CV, profile and more.
 <br>
 
-**[<i class="fa-solid fa-fire"></i> Check it out](https://nextjs-chat-black-omega-27.vercel.app/)**
+**[<i class="fa-solid fa-fire"></i> Check it out](https://know-me-better-jagan.streamlit.app/)**
