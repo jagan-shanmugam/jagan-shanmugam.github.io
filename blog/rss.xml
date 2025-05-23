@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Jagan Shanmugam Blog</title>
+        <link>https://jagan-shanmugam.github.io/blog</link>
+        <description>Jagan Shanmugam Blog</description>
+        <lastBuildDate>Wed, 26 Mar 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[MCP Overview]]></title>
+            <link>https://jagan-shanmugam.github.io/blog/MCP-Overview</link>
+            <guid>https://jagan-shanmugam.github.io/blog/MCP-Overview</guid>
+            <pubDate>Wed, 26 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Introduction]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_QNvs" id="introduction">Introduction<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+<p>The Model Context Protocol (MCP), introduced by Anthropic, is rapidly becoming the universal standard for connecting AI models to external data, tools, and real-world actions. Think of MCP as the "USB-C port for AI applications," enabling seamless integration between AI agents and a wide variety of data sources and APIs.</p>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="why-all-the-hype">Why All the Hype?<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#why-all-the-hype" class="hash-link" aria-label="Direct link to Why All the Hype?" title="Direct link to Why All the Hype?">​</a></h2>
+<ul>
+<li><strong>Solving the "N times M Problem"</strong>: MCP flattens the complex web of integrations between many AI clients and many servers/APIs, allowing tool providers to build one MCP server and application developers to connect to any MCP server with a compatible client.</li>
+<li><strong>More Powerful AI Applications</strong>: Standardization means richer, more capable AI applications that can take real-world actions.</li>
+<li><strong>Enterprise Efficiency</strong>: Enterprises can separate concerns, letting different teams build and maintain specialized MCP servers (e.g., for Vector DBs or RAG systems) that can be reused across teams and projects.</li>
+<li><strong>Flexibility and Interoperability</strong>: Developers gain access to a growing list of pre-built integrations and can easily switch between LLM providers and vendors.</li>
+<li><strong>AI-Native Design</strong>: Unlike OpenAPI or GraphQL, MCP is designed specifically for AI agents, refining patterns for tool use, resource access, and prompt incorporation.</li>
+<li><strong>Strong Foundation</strong>: MCP draws inspiration from the Language Server Protocol (LSP) and comes with a comprehensive specification.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="motivating-example">Motivating Example<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#motivating-example" class="hash-link" aria-label="Direct link to Motivating Example" title="Direct link to Motivating Example">​</a></h2>
+<p>AI models are only as good as the context provided to them. Historically, context was manually copy-pasted into chatbots. Now, MCP enables direct hooks into user data and context, making AI more powerful and personalized.</p>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="why-do-llms-need-tools-and-external-context">Why Do LLMs Need Tools and External Context?<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#why-do-llms-need-tools-and-external-context" class="hash-link" aria-label="Direct link to Why Do LLMs Need Tools and External Context?" title="Direct link to Why Do LLMs Need Tools and External Context?">​</a></h3>
+<ul>
+<li><strong>Overcoming inherent limitations</strong>: Standalone models have functional limits that can be addressed by interacting with external systems.</li>
+<li><strong>Accessing real-time data</strong>: Tools allow LLMs to get up-to-date information not present in their training data (e.g., weather APIs).</li>
+<li><strong>Performing actions</strong>: Tools enable LLMs to take actions in external systems, such as adding tasks, managing subscriptions, or controlling smart devices.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="mcp-overview">MCP Overview<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#mcp-overview" class="hash-link" aria-label="Direct link to MCP Overview" title="Direct link to MCP Overview">​</a></h2>
+<ul>
+<li><strong>M x N Problem</strong>: Many applications, many data sources/APIs. MCP solves this with a single, standardized protocol.</li>
+<li><strong>Inspired by LSP</strong>: MCP borrows from the Language Server Protocol, making it familiar to developers.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="what-is-mcp">What is MCP?<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#what-is-mcp" class="hash-link" aria-label="Direct link to What is MCP?" title="Direct link to What is MCP?">​</a></h2>
+<p>MCP is a client-server protocol:</p>
+<ul>
+<li><strong>MCP Hosts</strong>: User-facing applications (e.g., Claude Desktop, IDEs, custom AI tools)</li>
+<li><strong>MCP Clients</strong>: Manage the connection to a specific MCP Server</li>
+<li><strong>MCP Servers</strong>: Lightweight programs exposing capabilities per the MCP spec, bridging the MCP world and external systems</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="before-and-after-mcp">Before and After MCP<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#before-and-after-mcp" class="hash-link" aria-label="Direct link to Before and After MCP" title="Direct link to Before and After MCP">​</a></h3>
+<ul>
+<li>Before: Each AI client needed custom integrations for every server/API.</li>
+<li>After: One protocol, many integrations, less complexity.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="demo--use-cases">Demo &amp; Use Cases<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#demo--use-cases" class="hash-link" aria-label="Direct link to Demo &amp; Use Cases" title="Direct link to Demo &amp; Use Cases">​</a></h2>
+<ul>
+<li><strong>Clients</strong>: IDEs (VSCode, Cursor, Windsurf), Goose, Claude Desktop, Mattermost, Persona Chat</li>
+<li><strong>Github Copilot</strong>: Agents with MCP servers for Figma-to-Code, Data Analysis, Github management</li>
+<li><strong>Goose</strong>: Agents with MCP servers using Nexus API</li>
+<li><strong>WHOIS MCP</strong>: Find domain owners</li>
+<li><strong>PowerPoint MCP</strong>: Create presentations with images</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="limitations--risks">Limitations &amp; Risks<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#limitations--risks" class="hash-link" aria-label="Direct link to Limitations &amp; Risks" title="Direct link to Limitations &amp; Risks">​</a></h2>
+<ul>
+<li>LLMs can still hallucinate and are prone to prompt injection attacks</li>
+<li>Risk of tool poisoning by untrusted MCP servers</li>
+<li>Potential to execute untrusted code via STDIO MCP servers</li>
+<li>Why not just use OpenAPI? MCP is AI-native and designed for agent workflows</li>
+<li>Remote support and authentication (OAuth 2.1 for remote servers)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="mcp-server-registry">MCP Server Registry<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#mcp-server-registry" class="hash-link" aria-label="Direct link to MCP Server Registry" title="Direct link to MCP Server Registry">​</a></h2>
+<p>Find open source MCP servers at:</p>
+<ul>
+<li><a href="https://smithery.ai/" target="_blank" rel="noopener noreferrer">https://smithery.ai/</a></li>
+<li><a href="https://opentools.com/registry" target="_blank" rel="noopener noreferrer">https://opentools.com/registry</a></li>
+<li><a href="https://www.mcp.run/" target="_blank" rel="noopener noreferrer">https://www.mcp.run/</a></li>
+<li><a href="https://glama.ai/mcp/servers" target="_blank" rel="noopener noreferrer">https://glama.ai/mcp/servers</a></li>
+<li><a href="https://www.reddit.com/r/mcp/comments/1iwen1j/anthropic_will_be_launching_an_official_mcp/" target="_blank" rel="noopener noreferrer">https://www.reddit.com/r/mcp/comments/1iwen1j/anthropic_will_be_launching_an_official_mcp/</a></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="best-practices">Best Practices<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#best-practices" class="hash-link" aria-label="Direct link to Best Practices" title="Direct link to Best Practices">​</a></h2>
+<ul>
+<li>Run only trusted or official MCP servers</li>
+<li>Audit MCP servers before running locally</li>
+<li>Use isolated environments (e.g., Docker)</li>
+<li>Start with test data and restrict permissions</li>
+<li>Explore what's possible!</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="further-reading">Further Reading<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#further-reading" class="hash-link" aria-label="Direct link to Further Reading" title="Direct link to Further Reading">​</a></h2>
+<ul>
+<li><a href="https://modelcontextprotocol.io/introduction" target="_blank" rel="noopener noreferrer">Model Context Protocol Introduction</a></li>
+<li><a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener noreferrer">MCP Github</a></li>
+<li><a href="https://www.latent.space/p/mcp" target="_blank" rel="noopener noreferrer">Latent Space article about MCP</a></li>
+<li><a href="https://www.latent.space/p/why-mcp-won" target="_blank" rel="noopener noreferrer">Latent Space - Why MCP won</a></li>
+<li><a href="https://youtu.be/kQmXtrmQ5Zg" target="_blank" rel="noopener noreferrer"> Full Workshop with Mahesh Murag of Anthropic</a></li>
+<li><a href="https://newsletter.pragmaticengineer.com/p/mcp" target="_blank" rel="noopener noreferrer">Pragmatic Engineer blog</a></li>
+<li><a href="https://www.philschmid.de/mcp-introduction#why-is-there-so-much-hype-did-mcp-win" target="_blank" rel="noopener noreferrer">Phil Schmid's blog</a></li>
+<li><a href="https://notebooklm.google.com/notebook/35fbb73f-5fd6-4252-8be0-8ae2bf15f9c3" target="_blank" rel="noopener noreferrer">Study MCP - NotebookLM</a></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="personal-contributions">Personal Contributions<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#personal-contributions" class="hash-link" aria-label="Direct link to Personal Contributions" title="Direct link to Personal Contributions">​</a></h2>
+<ul>
+<li><a href="https://github.com/jagan-shanmugam/mattermost-mcp-host" target="_blank" rel="noopener noreferrer">Mattermost MCP Host</a></li>
+<li><a href="https://github.com/jagan-shanmugam/open-streetmap-mcp" target="_blank" rel="noopener noreferrer">Open Streetmap MCP</a></li>
+<li><a href="https://github.com/jagan-shanmugam/climatiq-mcp-server" target="_blank" rel="noopener noreferrer">Climatiq MCP Server</a></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="mcp-mind-map-interactive-mermaid-diagram">MCP Mind Map (Interactive Mermaid Diagram)<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#mcp-mind-map-interactive-mermaid-diagram" class="hash-link" aria-label="Direct link to MCP Mind Map (Interactive Mermaid Diagram)" title="Direct link to MCP Mind Map (Interactive Mermaid Diagram)">​</a></h2>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[TicTacToe RL]]></title>
+            <link>https://jagan-shanmugam.github.io/blog/tictactoe-rl</link>
+            <guid>https://jagan-shanmugam.github.io/blog/tictactoe-rl</guid>
+            <pubDate>Mon, 20 Apr 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is an implementation of the classic Tic Tac Toe game, powered by Reinforcement Learning (RL)! This project demonstrates how an RL agent can learn to play Tic Tac Toe optimally through self-play and Temporal Difference (TD) learning.]]></description>
+            <content:encoded><![CDATA[<p>This is an implementation of the classic Tic Tac Toe game, powered by Reinforcement Learning (RL)! This project demonstrates how an RL agent can learn to play Tic Tac Toe optimally through self-play and Temporal Difference (TD) learning.</p>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="project-overview">Project Overview<a href="https://jagan-shanmugam.github.io/blog/tictactoe-rl#project-overview" class="hash-link" aria-label="Direct link to Project Overview" title="Direct link to Project Overview">​</a></h2>
+<ul>
+<li><strong>Purpose:</strong> Train an RL agent to play Tic Tac Toe using self-play and TD(0) learning, and provide both a command-line and graphical interface for users to play against the trained agent.</li>
+<li><strong>Key Features:</strong>
+<ul>
+<li>RL agent learns state values for all possible board configurations (over 19,000 states)</li>
+<li>Epsilon-greedy policy for balancing exploration and exploitation during training</li>
+<li>Pygame-based graphical UI for interactive play</li>
+<li>Command-line interface for quick testing</li>
+<li>Well-documented code and modular structure</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="how-it-works">How It Works<a href="https://jagan-shanmugam.github.io/blog/tictactoe-rl#how-it-works" class="hash-link" aria-label="Direct link to How It Works" title="Direct link to How It Works">​</a></h2>
+<p>The RL agent is trained using a simple TD(0) update rule:</p>
+<div class="codeBlockContainer_QjQF theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_zSGe"><pre tabindex="0" class="prism-code language-text codeBlock_yttp thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_vQsx"><span class="token-line" style="color:#393A34"><span class="token plain">v(s) ← v(s) + α (v(s') - v(s))</span><br></span></code></pre><div class="buttonGroup_ogUl"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_fCl8" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_bv3D"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_ezjS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ul>
+<li><strong>v(s):</strong> Value of the current state</li>
+<li><strong>v(s'):</strong> Value of the next state</li>
+<li><strong>α:</strong> Learning rate</li>
+</ul>
+<p>During training, the agent plays games against itself, updating state values based on the outcome and gradually improving its strategy. The agent uses an epsilon-greedy policy to occasionally explore random moves, ensuring a robust learning process.</p>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="directory-structure">Directory Structure<a href="https://jagan-shanmugam.github.io/blog/tictactoe-rl#directory-structure" class="hash-link" aria-label="Direct link to Directory Structure" title="Direct link to Directory Structure">​</a></h2>
+<ul>
+<li><strong>game_app.py:</strong> Pygame-based UI for playing against the RL agent</li>
+<li><strong>test_game.py:</strong> Command-line interface for testing</li>
+<li><strong>training_self_play.py:</strong> RL training logic</li>
+<li><strong>tic_tac_toe.py:</strong> Core game logic and state management</li>
+<li><strong>requirements:</strong> Python dependencies</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="getting-started">Getting Started<a href="https://jagan-shanmugam.github.io/blog/tictactoe-rl#getting-started" class="hash-link" aria-label="Direct link to Getting Started" title="Direct link to Getting Started">​</a></h2>
+<ol>
+<li><strong>Install Dependencies:</strong>
+<ul>
+<li>Python 3.5+</li>
+<li>Install required packages:<!-- -->
+<div class="codeBlockContainer_QjQF theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_zSGe"><pre tabindex="0" class="prism-code language-text codeBlock_yttp thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_vQsx"><span class="token-line" style="color:#393A34"><span class="token plain">pip install -r requirements</span><br></span></code></pre><div class="buttonGroup_ogUl"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_fCl8" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_bv3D"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_ezjS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ul>
+</li>
+<li><strong>Train the RL Agent:</strong>
+<ul>
+<li>Run <code>training_self_play.py</code> to train the agent (optional, pre-trained values included)</li>
+</ul>
+</li>
+<li><strong>Play the Game:</strong>
+<ul>
+<li><strong>Graphical UI:</strong>
+<div class="codeBlockContainer_QjQF theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_zSGe"><pre tabindex="0" class="prism-code language-text codeBlock_yttp thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_vQsx"><span class="token-line" style="color:#393A34"><span class="token plain">python game_app.py</span><br></span></code></pre><div class="buttonGroup_ogUl"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_fCl8" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_bv3D"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_ezjS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+<li><strong>Command-line:</strong>
+<div class="codeBlockContainer_QjQF theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_zSGe"><pre tabindex="0" class="prism-code language-text codeBlock_yttp thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_vQsx"><span class="token-line" style="color:#393A34"><span class="token plain">python test_game.py</span><br></span></code></pre><div class="buttonGroup_ogUl"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_fCl8" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_bv3D"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_ezjS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ul>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="gameplay">Gameplay<a href="https://jagan-shanmugam.github.io/blog/tictactoe-rl#gameplay" class="hash-link" aria-label="Direct link to Gameplay" title="Direct link to Gameplay">​</a></h2>
+<ul>
+<li>The RL agent can play as either X or O.</li>
+<li>In the Pygame UI, the agent and user take turns; click on a square to make your move.</li>
+<li>After each game, click anywhere to restart.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="references">References<a href="https://jagan-shanmugam.github.io/blog/tictactoe-rl#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References">​</a></h2>
+<ul>
+<li><a href="https://github.com/jagan-shanmugam/TicTacToe-RL" target="_blank" rel="noopener noreferrer">Tic Tac Toe RL GitHub Repository</a></li>
+<li><a href="https://ipvs.informatik.uni-stuttgart.de/mlr/wp-content/uploads/2018/05/18-RL-td.pdf" target="_blank" rel="noopener noreferrer">Temporal Difference Learning (PDF)</a></li>
+<li><a href="https://nestedsoftware.com/2019/07/25/tic-tac-toe-with-tabular-q-learning-1kdn.139811.html" target="_blank" rel="noopener noreferrer">Q-Learning Tic Tac Toe Tutorial</a></li>
+</ul>
+<hr>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Latent Space Bayesian Optimization]]></title>
+            <link>https://jagan-shanmugam.github.io/blog/latent-space-bo</link>
+            <guid>https://jagan-shanmugam.github.io/blog/latent-space-bo</guid>
+            <pubDate>Sun, 15 Mar 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[A blog post about Latent Space Bayesian Optimization]]></description>
+            <content:encoded><![CDATA[<p>Optimization is everywhere - in tuning machine learning models, industrial processes, and even in everyday decision-making. But what happens when the problem you want to optimize is a black box, expensive to evaluate, and has way too many parameters? That's where my master's thesis comes in: Latent Space Bayesian Optimization with Transfer Learning. Here's a deep dive into what I did, why it matters, and what I learned along the way.</p>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="the-problem-black-box-optimization-in-high-dimensions">The Problem: Black-Box Optimization in High Dimensions<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#the-problem-black-box-optimization-in-high-dimensions" class="hash-link" aria-label="Direct link to The Problem: Black-Box Optimization in High Dimensions" title="Direct link to The Problem: Black-Box Optimization in High Dimensions">​</a></h2>
+<p>Let's set the stage. Imagine you're trying to optimize a process - say, welding parameters in manufacturing. You have a ton of parameters (temperature, speed, material type, etc.), but only a few of them really matter for the final outcome. The catch? Every experiment is expensive, noisy, and you don't have an explicit formula to optimize. This is a classic expensive black-box optimization problem, and Bayesian Optimization (BO) is a popular tool for it.</p>
+<p>But BO has a weakness: it doesn't scale well with high-dimensional spaces. Most of the regions in high-dimensional parameter space are flat, making it hard to find the optimum quickly. Plus, if you've optimized similar problems before, you'd want to use that experience to speed things up - that's where transfer learning comes in.</p>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="the-core-idea-optimize-where-it-matters">The Core Idea: Optimize Where It Matters<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#the-core-idea-optimize-where-it-matters" class="hash-link" aria-label="Direct link to The Core Idea: Optimize Where It Matters" title="Direct link to The Core Idea: Optimize Where It Matters">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="latent-spaces">Latent Spaces<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#latent-spaces" class="hash-link" aria-label="Direct link to Latent Spaces" title="Direct link to Latent Spaces">​</a></h3>
+<p>The key insight is that, even though your input space might be huge (dozens or hundreds of parameters), the intrinsic dimensionality is often much lower. In other words, only a few directions in parameter space actually affect your objective. If you can learn a transformation from the high-dimensional input to a low-dimensional latent space that captures the important variation, you can optimize much more efficiently.</p>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="transfer-learning">Transfer Learning<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#transfer-learning" class="hash-link" aria-label="Direct link to Transfer Learning" title="Direct link to Transfer Learning">​</a></h3>
+<p>If you've already solved similar optimization problems (maybe with different materials or settings), you should be able to transfer what you've learned. The challenge is to design a model that can leverage this metadata (past optimization runs) to "warm start" the new optimization, avoiding the cold start problem that plagues standard BO.</p>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="my-approach-joint-learning-in-latent-space">My Approach: Joint Learning in Latent Space<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#my-approach-joint-learning-in-latent-space" class="hash-link" aria-label="Direct link to My Approach: Joint Learning in Latent Space" title="Direct link to My Approach: Joint Learning in Latent Space">​</a></h2>
+<p>My thesis proposes a method that jointly learns:</p>
+<ul>
+<li>A transformation from input space to latent space (either linear or nonlinear)</li>
+<li>A shared set of features (basis functions) across multiple tasks for transfer learning</li>
+</ul>
+<p>The model is trained in two phases:</p>
+<ol>
+<li><strong>Meta-training:</strong> Learn from metadata (previous tasks) to initialize the latent space and shared features.</li>
+<li><strong>Target training:</strong> Adapt the model to the new task, fine-tuning both the latent space and the prediction model as new data comes in.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="model-architecture">Model Architecture<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#model-architecture" class="hash-link" aria-label="Direct link to Model Architecture" title="Direct link to Model Architecture">​</a></h2>
+<p>I explored two main variants:</p>
+<ul>
+<li><strong>Projection-ABLR:</strong> Uses a learnable linear projection from input to latent space, paired with Adaptive Bayesian Linear Regression (ABLR) for prediction.</li>
+<li><strong>AutoEncoder-ABLR:</strong> Uses an autoencoder (neural network) to learn a nonlinear mapping to latent space, again paired with ABLR.</li>
+</ul>
+<p>Both models are trained to minimize a combination of negative log-likelihood (for prediction) and mean squared error (for reconstructing the input from the latent space). This joint loss ensures the latent space is both predictive and reconstructive.</p>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="why-ablr">Why ABLR?<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#why-ablr" class="hash-link" aria-label="Direct link to Why ABLR?" title="Direct link to Why ABLR?">​</a></h3>
+<p>Adaptive Bayesian Linear Regression is computationally efficient and scales well with the number of tasks and data points - crucial for transfer learning. It allows for a separate Bayesian regressor for each task, but shares the feature mapping, making it ideal for multi-task scenarios.</p>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="experiments-synthetic-benchmarks">Experiments: Synthetic Benchmarks<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#experiments-synthetic-benchmarks" class="hash-link" aria-label="Direct link to Experiments: Synthetic Benchmarks" title="Direct link to Experiments: Synthetic Benchmarks">​</a></h2>
+<p>To test the method, I used high-dimensional synthetic functions with known low intrinsic dimensionality:</p>
+<ul>
+<li><strong>Quadratic function:</strong> Parameterized by a small set of variables, projected into higher dimensions.</li>
+<li><strong>Rosenbrock function:</strong> A classic optimization benchmark, adapted for multi-task and high-dimensional settings.</li>
+</ul>
+<p>I compared my models against state-of-the-art baselines:</p>
+<ul>
+<li><strong>REMBO:</strong> Random Embeddings for Bayesian Optimization (no transfer learning)</li>
+<li><strong>Multi-Task ABLR:</strong> Directly models in the input space with transfer learning</li>
+<li><strong>VAE-BO:</strong> Variational Autoencoder-based Bayesian Optimization</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="key-results">Key Results<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#key-results" class="hash-link" aria-label="Direct link to Key Results" title="Direct link to Key Results">​</a></h2>
+<ul>
+<li><strong>Transfer learning helps:</strong> Models that leverage metadata start with lower regret (closer to the optimum) and converge faster, especially in the early iterations.</li>
+<li><strong>Latent space optimization is efficient:</strong> By optimizing in the learned low-dimensional space, the search is much more effective than in the original high-dimensional space.</li>
+<li><strong>Projection-ABLR outperforms:</strong> The linear projection model consistently achieved lower regret than baselines, especially when enough metadata was available.</li>
+<li><strong>AutoEncoder-ABLR needs more data:</strong> Nonlinear models (autoencoders) can capture more complex relationships but require more data to avoid overfitting or saturation.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="challenges-and-open-questions">Challenges and Open Questions<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#challenges-and-open-questions" class="hash-link" aria-label="Direct link to Challenges and Open Questions" title="Direct link to Challenges and Open Questions">​</a></h2>
+<ul>
+<li><strong>Estimating intrinsic dimensionality:</strong> Knowing how many latent dimensions to use is still an open problem. I tried cross-validation and meta-loss analysis, but the results were inconclusive. This remains a key challenge for future work.</li>
+<li><strong>Scaling to real-world tasks:</strong> The method works well on synthetic benchmarks. Applying it to real industrial processes (like welding) is the next step.</li>
+<li><strong>Negative transfer:</strong> If the metadata tasks are too different from the target, transfer learning can actually hurt performance. Designing robust ways to detect and avoid negative transfer is important.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="takeaways">Takeaways<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#takeaways" class="hash-link" aria-label="Direct link to Takeaways" title="Direct link to Takeaways">​</a></h2>
+<ul>
+<li><strong>Joint learning works:</strong> Simultaneously learning the latent space and prediction model is more effective than sequential approaches, especially when data is scarce.</li>
+<li><strong>Transfer learning is powerful:</strong> Leveraging past experience can dramatically speed up optimization in new tasks.</li>
+<li><strong>Linear vs. nonlinear:</strong> Linear projections are surprisingly effective when the intrinsic structure is simple, but nonlinear mappings (autoencoders) are more flexible for complex tasks - if you have enough data.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="conclusion">Conclusion<a href="https://jagan-shanmugam.github.io/blog/latent-space-bo#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
+<p>My thesis shows that Latent Space Bayesian Optimization with Transfer Learning is a promising approach for high-dimensional, expensive black-box optimization. By learning where to search (latent space) and how to transfer knowledge from previous tasks, we can solve challenging optimization problems more efficiently.</p>
+<p>If you're working on hyperparameter tuning, industrial process optimization, or any scenario where experiments are costly and you have some prior data, this approach could save you time, money, and frustration.</p>]]></content:encoded>
+            <category>Bayesian Optimization</category>
+            <category>Transfer Learning</category>
+            <category>Thesis</category>
+        </item>
+        <item>
+            <title><![CDATA[Clustering Evolving Data Streams]]></title>
+            <link>https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams</link>
+            <guid>https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams</guid>
+            <pubDate>Tue, 28 May 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Clustering evolving data streams is one of those topics that sits right at the intersection of machine learning, big data, and real-time analytics. With the explosion of data from IoT devices, social media, and continuous sensors, we're not just dealing with big data - we're dealing with fast data that never stops coming. In this post, I'll walk through the core ideas behind clustering evolving data streams, the unique challenges, and some of the leading algorithms and concepts in this space.]]></description>
+            <content:encoded><![CDATA[<p>Clustering evolving data streams is one of those topics that sits right at the intersection of machine learning, big data, and real-time analytics. With the explosion of data from IoT devices, social media, and continuous sensors, we're not just dealing with big data - we're dealing with <em>fast</em> data that never stops coming. In this post, I'll walk through the core ideas behind clustering evolving data streams, the unique challenges, and some of the leading algorithms and concepts in this space.</p>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="why-clustering-data-streams-is-different">Why Clustering Data Streams Is Different<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#why-clustering-data-streams-is-different" class="hash-link" aria-label="Direct link to Why Clustering Data Streams Is Different" title="Direct link to Why Clustering Data Streams Is Different">​</a></h2>
+<p>Traditional clustering methods (think K-means, DBSCAN, etc.) assume you have all your data up front. But in the real world, data often arrives as a stream - unbounded, high-volume, and potentially high-dimensional. Here are the main challenges:</p>
+<ul>
+<li><strong>Single-pass constraint:</strong> You can't store all the data, so you need algorithms that process each point only once (or a small number of times).</li>
+<li><strong>Evolving nature:</strong> The underlying patterns (clusters) can change over time - new clusters can appear, old ones disappear, and others might split or merge.</li>
+<li><strong>Real-time requirements:</strong> You need to update clusters quickly, often before the next data point arrives.</li>
+<li><strong>Memory and computation limits:</strong> You have to summarize the stream efficiently, as storing everything is not an option.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="core-concepts">Core Concepts<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#core-concepts" class="hash-link" aria-label="Direct link to Core Concepts" title="Direct link to Core Concepts">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="stream-data-clustering">Stream Data Clustering<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#stream-data-clustering" class="hash-link" aria-label="Direct link to Stream Data Clustering" title="Direct link to Stream Data Clustering">​</a></h3>
+<p>Given a stream of data points (often high-dimensional), the goal is to maintain a set of clusters that reflect the current structure of the data at any point in time. Each data point may also have a timestamp, and the "freshness" of a point decays over time - recent data is more relevant than old data.</p>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="cluster-evolution">Cluster Evolution<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#cluster-evolution" class="hash-link" aria-label="Direct link to Cluster Evolution" title="Direct link to Cluster Evolution">​</a></h3>
+<p>Clusters in streaming data are not static. Over time, you might see:</p>
+<ul>
+<li><strong>Emergence:</strong> New clusters appear.</li>
+<li><strong>Disappearance:</strong> Existing clusters fade away.</li>
+<li><strong>Split:</strong> A cluster divides into two or more.</li>
+<li><strong>Merge:</strong> Two or more clusters combine.</li>
+<li><strong>Adjustment:</strong> The shape or position of a cluster shifts.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="decay-models">Decay Models<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#decay-models" class="hash-link" aria-label="Direct link to Decay Models" title="Direct link to Decay Models">​</a></h3>
+<p>To handle the evolving nature, most algorithms use a <em>decay model</em> - older data points have less influence on the current clustering result, often modeled with an exponential decay function.</p>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="summarizing-the-stream">Summarizing the Stream<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#summarizing-the-stream" class="hash-link" aria-label="Direct link to Summarizing the Stream" title="Direct link to Summarizing the Stream">​</a></h2>
+<p>Because you can't keep all the data, you need to summarize it. Three popular approaches:</p>
+<ul>
+<li><strong>Cluster-cells:</strong> Groups of nearby points summarized as a single entity (with a seed, density, and dependent distance).</li>
+<li><strong>Micro-clusters:</strong> Small, time-stamped summaries of data locality, often used in hierarchical or partitioning methods.</li>
+<li><strong>Grids:</strong> The data space is divided into grids, and densities are maintained for each grid cell - great for high-dimensional data.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="leading-algorithms">Leading Algorithms<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#leading-algorithms" class="hash-link" aria-label="Direct link to Leading Algorithms" title="Direct link to Leading Algorithms">​</a></h2>
+<p>Let's look at some of the state-of-the-art methods for clustering evolving data streams:</p>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="edmstream">EDMStream<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#edmstream" class="hash-link" aria-label="Direct link to EDMStream" title="Direct link to EDMStream">​</a></h3>
+<ul>
+<li><strong>Approach:</strong> Density-based, inspired by Density Peaks clustering.</li>
+<li><strong>How it works:</strong> Summarizes nearby points into <em>cluster-cells</em> and organizes them in a <em>Dependency Tree</em> (DP-Tree). The DP-Tree is updated as new data arrives, tracking dependencies and densities.</li>
+<li><strong>Cluster evolution:</strong> Can detect emergence, disappearance, split, merge, and adjustment of clusters in real time.</li>
+<li><strong>Key advantage:</strong> Real-time updates and evolution tracking, making it suitable for applications like news recommendation or intrusion detection.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="clustream">CluStream<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#clustream" class="hash-link" aria-label="Direct link to CluStream" title="Direct link to CluStream">​</a></h3>
+<ul>
+<li><strong>Approach:</strong> Partitioning, two-phase (online/offline).</li>
+<li><strong>How it works:</strong> In the online phase, maintains <em>micro-clusters</em> as summaries. In the offline phase, uses these micro-clusters to perform clustering (often with K-means) and analyze evolution.</li>
+<li><strong>Cluster evolution:</strong> Supports analysis over different time horizons, but not truly real-time.</li>
+<li><strong>Key advantage:</strong> Well-suited for scenarios where you can afford to do heavier computation offline.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="d-stream">D-Stream<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#d-stream" class="hash-link" aria-label="Direct link to D-Stream" title="Direct link to D-Stream">​</a></h3>
+<ul>
+<li><strong>Approach:</strong> Density-based, grid-oriented.</li>
+<li><strong>How it works:</strong> Maps incoming data to a grid, updates densities, and periodically clusters dense grid cells. Uses decay to handle evolving data.</li>
+<li><strong>Cluster evolution:</strong> Can adapt to changing data, but less effective in high-dimensional spaces.</li>
+<li><strong>Key advantage:</strong> Efficient for outlier detection and works well when the number of dimensions is moderate.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="e-stream">E-Stream<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#e-stream" class="hash-link" aria-label="Direct link to E-Stream" title="Direct link to E-Stream">​</a></h3>
+<ul>
+<li><strong>Approach:</strong> Evolution-based, extends CluStream.</li>
+<li><strong>How it works:</strong> Each cluster is represented as a <em>Fading Cluster Structure with Histogram</em> (FCH). Tracks evolution using histograms and supports appearance, disappearance, self-evolution, merge, and split.</li>
+<li><strong>Key advantage:</strong> Explicitly tracks cluster evolution using statistical summaries.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_QNvs" id="mec-algorithm">MEC Algorithm<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#mec-algorithm" class="hash-link" aria-label="Direct link to MEC Algorithm" title="Direct link to MEC Algorithm">​</a></h3>
+<ul>
+<li><strong>Approach:</strong> Evolution tracking (not clustering itself).</li>
+<li><strong>How it works:</strong> Uses bipartite graphs and conditional probabilities to track how clusters change between time windows. Categorizes transitions as birth, death, split, merge, or survival.</li>
+<li><strong>Key advantage:</strong> Useful for monitoring and analyzing cluster evolution after clustering has been performed.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="quick-comparison">Quick Comparison<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#quick-comparison" class="hash-link" aria-label="Direct link to Quick Comparison" title="Direct link to Quick Comparison">​</a></h2>
+<p>Here's a markdown table summarizing the main differences:</p>
+<table><thead><tr><th style="text-align:left">Algorithm</th><th style="text-align:left">Summary Structure</th><th style="text-align:left">Based On</th><th style="text-align:left">Real-time?</th><th style="text-align:left">Cluster Evolution Tracking</th><th style="text-align:left">Notes</th></tr></thead><tbody><tr><td style="text-align:left">EDMStream</td><td style="text-align:left">Cluster-cell</td><td style="text-align:left">Density</td><td style="text-align:left">Yes</td><td style="text-align:left">Yes</td><td style="text-align:left">Tracks evolution, incremental updates</td></tr><tr><td style="text-align:left">CluStream</td><td style="text-align:left">Micro-clusters</td><td style="text-align:left">Partitioning</td><td style="text-align:left">No</td><td style="text-align:left">Partial (offline)</td><td style="text-align:left">Hierarchical, uses K-means offline</td></tr><tr><td style="text-align:left">D-Stream</td><td style="text-align:left">Grids</td><td style="text-align:left">Density</td><td style="text-align:left">No</td><td style="text-align:left">Partial</td><td style="text-align:left">Efficient for outliers, less for high-dims</td></tr><tr><td style="text-align:left">E-Stream</td><td style="text-align:left">FCH (histograms)</td><td style="text-align:left">Partitioning</td><td style="text-align:left">No</td><td style="text-align:left">Yes</td><td style="text-align:left">Tracks evolution using histograms</td></tr><tr><td style="text-align:left">MEC</td><td style="text-align:left">N/A (post-hoc)</td><td style="text-align:left">N/A</td><td style="text-align:left">N/A</td><td style="text-align:left">Yes</td><td style="text-align:left">For monitoring, not clustering itself</td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="evaluation-metrics">Evaluation Metrics<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#evaluation-metrics" class="hash-link" aria-label="Direct link to Evaluation Metrics" title="Direct link to Evaluation Metrics">​</a></h2>
+<p>When you cluster evolving data streams, you care about:</p>
+<ul>
+<li><strong>Cluster quality:</strong> Internal (e.g., sum of squared distances within clusters) and external (e.g., purity, entropy).</li>
+<li><strong>Response time:</strong> How quickly can the algorithm update clusters as new data arrives?</li>
+<li><strong>Adaptability:</strong> How well does it handle the appearance/disappearance of clusters?</li>
+<li><strong>Scalability:</strong> Can it handle high-dimensional or high-volume streams?</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="real-world-applications">Real-World Applications<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#real-world-applications" class="hash-link" aria-label="Direct link to Real-World Applications" title="Direct link to Real-World Applications">​</a></h2>
+<ul>
+<li><strong>News recommendation:</strong> Grouping articles in real time as trends evolve.</li>
+<li><strong>Intrusion detection:</strong> Detecting new types of attacks as they emerge in network traffic.</li>
+<li><strong>Sensor networks:</strong> Monitoring environmental data for emerging patterns.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_QNvs" id="final-thoughts">Final Thoughts<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#final-thoughts" class="hash-link" aria-label="Direct link to Final Thoughts" title="Direct link to Final Thoughts">​</a></h2>
+<p>Clustering evolving data streams is a vibrant research area with real-world impact. The key is to balance <em>speed</em>, <em>memory usage</em>, and <em>adaptability</em> to change. EDMStream stands out for real-time evolution tracking, but each algorithm has its sweet spot depending on your data and requirements.</p>
+<p>If you want to dive deeper, check out and all the sources cited there:</p>
+<ul>
+<li><a href="https://github.com/jagan-shanmugam/Course-Work/blob/master/Advanced-Data-Engineering/ADE19_paper_7.pdf" target="_blank" rel="noopener noreferrer">Advanced Data Engg - Clustering Evolving Data Streams</a></li>
+</ul>]]></content:encoded>
+            <category>Clustering</category>
+        </item>
+    </channel>
+</rss>
