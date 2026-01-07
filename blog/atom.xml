@@ -12,7 +12,7 @@
         <id>https://jagan-shanmugam.github.io/blog/DSPy-Intro</id>
         <link href="https://jagan-shanmugam.github.io/blog/DSPy-Intro"/>
         <updated>2025-10-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[DSPy (Declarative Self-improving Python) is a revolutionary framework developed by Stanford NLP that fundamentally changes how we build applications with Language Models (LMs).]]></summary>
+        <summary type="html"><![CDATA[Introduction to DSPy - Stanford NLP's declarative framework for programming with language models. Learn how to build composable, optimizable LM pipelines.]]></summary>
         <content type="html"><![CDATA[<p><strong>DSPy</strong> (Declarative Self-improving Python) is a revolutionary framework developed by Stanford NLP that fundamentally changes how we build applications with Language Models (LMs).
 Instead of manually crafting and tweaking prompts, DSPy lets you <strong>declare what you want</strong> and automatically optimizes <strong>how to achieve it</strong>.</p>
 <p>Think of DSPy as the <strong>SQL for language models</strong> - just as SQL lets you declare what data you want without specifying how to retrieve it, DSPy lets you declare your LM pipeline logic without manually engineering prompts.</p>
@@ -111,7 +111,7 @@ Instead of manually crafting and tweaking prompts, DSPy lets you <strong>declare
 By embracing declarative programming, we can build more reliable, maintainable, and performant LM applications.</p>]]></content>
         <author>
             <name>Jagan Shanmugam</name>
-            <uri>https://github.com/jagan-shanmugam</uri>
+            <uri>https://jagan-shanmugam.github.io</uri>
         </author>
         <category label="dspy" term="dspy"/>
         <category label="llm" term="llm"/>
@@ -123,7 +123,7 @@ By embracing declarative programming, we can build more reliable, maintainable, 
         <id>https://jagan-shanmugam.github.io/blog/MCP-Overview</id>
         <link href="https://jagan-shanmugam.github.io/blog/MCP-Overview"/>
         <updated>2025-03-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[The Model Context Protocol (MCP), introduced by Anthropic, is rapidly becoming the universal standard for connecting AI models to external data, tools, and real-world actions. Think of MCP as the "USB-C port for AI applications," enabling seamless integration between AI agents and a wide variety of data sources and APIs.]]></summary>
+        <summary type="html"><![CDATA[An overview of the Model Context Protocol (MCP) by Anthropic - the universal standard for connecting AI models to external data, tools, and real-world actions.]]></summary>
         <content type="html"><![CDATA[<p>The Model Context Protocol (MCP), introduced by Anthropic, is rapidly becoming the universal standard for connecting AI models to external data, tools, and real-world actions. Think of MCP as the "USB-C port for AI applications," enabling seamless integration between AI agents and a wide variety of data sources and APIs.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-all-the-hype">Why All the Hype?<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#why-all-the-hype" class="hash-link" aria-label="Direct link to Why All the Hype?" title="Direct link to Why All the Hype?" translate="no">​</a></h2>
 <ul>
@@ -214,15 +214,19 @@ By embracing declarative programming, we can build more reliable, maintainable, 
 ]]></content>
         <author>
             <name>Jagan Shanmugam</name>
-            <uri>https://github.com/jagan-shanmugam</uri>
+            <uri>https://jagan-shanmugam.github.io</uri>
         </author>
+        <category label="mcp" term="mcp"/>
+        <category label="ai" term="ai"/>
+        <category label="llm" term="llm"/>
+        <category label="anthropic" term="anthropic"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[TicTacToe RL]]></title>
         <id>https://jagan-shanmugam.github.io/blog/tictactoe-rl</id>
         <link href="https://jagan-shanmugam.github.io/blog/tictactoe-rl"/>
         <updated>2020-04-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[This is an implementation of the classic Tic Tac Toe game, powered by Reinforcement Learning (RL)! This project demonstrates how an RL agent can learn to play Tic Tac Toe optimally through self-play and Temporal Difference (TD) learning.]]></summary>
+        <summary type="html"><![CDATA[Build a Tic Tac Toe AI using Reinforcement Learning with TD(0) learning and epsilon-greedy policy. Includes Pygame GUI implementation.]]></summary>
         <content type="html"><![CDATA[<p>This is an implementation of the classic Tic Tac Toe game, powered by Reinforcement Learning (RL)! This project demonstrates how an RL agent can learn to play Tic Tac Toe optimally through self-play and Temporal Difference (TD) learning.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="project-overview">Project Overview<a href="https://jagan-shanmugam.github.io/blog/tictactoe-rl#project-overview" class="hash-link" aria-label="Direct link to Project Overview" title="Direct link to Project Overview" translate="no">​</a></h2>
 <ul>
@@ -295,8 +299,11 @@ By embracing declarative programming, we can build more reliable, maintainable, 
 <hr>]]></content>
         <author>
             <name>Jagan Shanmugam</name>
-            <uri>https://github.com/jagan-shanmugam</uri>
+            <uri>https://jagan-shanmugam.github.io</uri>
         </author>
+        <category label="reinforcement-learning" term="reinforcement-learning"/>
+        <category label="python" term="python"/>
+        <category label="pygame" term="pygame"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Latent Space Bayesian Optimization]]></title>
@@ -369,7 +376,7 @@ By embracing declarative programming, we can build more reliable, maintainable, 
 <p>If you're working on hyperparameter tuning, industrial process optimization, or any scenario where experiments are costly and you have some prior data, this approach could save you time, money, and frustration.</p>]]></content>
         <author>
             <name>Jagan Shanmugam</name>
-            <uri>https://github.com/jagan-shanmugam</uri>
+            <uri>https://jagan-shanmugam.github.io</uri>
         </author>
         <category label="Bayesian Optimization" term="Bayesian Optimization"/>
         <category label="Transfer Learning" term="Transfer Learning"/>
@@ -380,7 +387,7 @@ By embracing declarative programming, we can build more reliable, maintainable, 
         <id>https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams</id>
         <link href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams"/>
         <updated>2019-05-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Clustering evolving data streams is one of those topics that sits right at the intersection of machine learning, big data, and real-time analytics. With the explosion of data from IoT devices, social media, and continuous sensors, we're not just dealing with big data - we're dealing with fast data that never stops coming. In this post, I'll walk through the core ideas behind clustering evolving data streams, the unique challenges, and some of the leading algorithms and concepts in this space.]]></summary>
+        <summary type="html"><![CDATA[Deep dive into clustering algorithms for evolving data streams. Covers EDMStream, CluStream, D-Stream, and real-time cluster evolution tracking.]]></summary>
         <content type="html"><![CDATA[<p>Clustering evolving data streams is one of those topics that sits right at the intersection of machine learning, big data, and real-time analytics. With the explosion of data from IoT devices, social media, and continuous sensors, we're not just dealing with big data - we're dealing with <em>fast</em> data that never stops coming. In this post, I'll walk through the core ideas behind clustering evolving data streams, the unique challenges, and some of the leading algorithms and concepts in this space.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-clustering-data-streams-is-different">Why Clustering Data Streams Is Different<a href="https://jagan-shanmugam.github.io/blog/clustering-evolving-data-streams#why-clustering-data-streams-is-different" class="hash-link" aria-label="Direct link to Why Clustering Data Streams Is Different" title="Direct link to Why Clustering Data Streams Is Different" translate="no">​</a></h2>
 <p>Traditional clustering methods (think K-means, DBSCAN, etc.) assume you have all your data up front. But in the real world, data often arrives as a stream - unbounded, high-volume, and potentially high-dimensional. Here are the main challenges:</p>
@@ -471,8 +478,11 @@ By embracing declarative programming, we can build more reliable, maintainable, 
 </ul>]]></content>
         <author>
             <name>Jagan Shanmugam</name>
-            <uri>https://github.com/jagan-shanmugam</uri>
+            <uri>https://jagan-shanmugam.github.io</uri>
         </author>
         <category label="Clustering" term="Clustering"/>
+        <category label="data-streams" term="data-streams"/>
+        <category label="machine-learning" term="machine-learning"/>
+        <category label="real-time-analytics" term="real-time-analytics"/>
     </entry>
 </feed>
