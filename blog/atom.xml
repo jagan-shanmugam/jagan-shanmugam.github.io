@@ -66,7 +66,7 @@ Defining metrics, curating datasets, experimenting with a hypothesis and trackin
 <li class=""><strong>Metrics</strong> is the interesting part that can be combined with optimizers to optimize the <em>program</em>.</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-declarative">Why Declarative?<a href="https://jagan-shanmugam.github.io/blog/DSPy-Intro#why-declarative" class="hash-link" aria-label="Direct link to Why Declarative?" title="Direct link to Why Declarative?" translate="no">​</a></h3>
-<table><thead><tr><th>Imperative (Old)</th><th>Declarative (DSPy)</th></tr></thead><tbody><tr><td>Manually craft prompts</td><td>Declare signatures</td></tr><tr><td>Hard-code examples</td><td>Auto-generate demos</td></tr><tr><td>Trial and error tuning</td><td>Systematic optimization</td></tr><tr><td>Brittle prompt strings</td><td>Composable modules</td></tr><tr><td>One-off solutions</td><td>Reusable components</td></tr></tbody></table>
+<table><thead><tr><th>Imperative (Old)</th><th>Declarative (DSPy)</th></tr></thead><tbody><tr><td>Manually craft prompts</td><td>Declare signatures</td></tr><tr><td>Hard-code examples</td><td>Auto-generate examples</td></tr><tr><td>Trial and error tuning</td><td>Systematic optimization</td></tr><tr><td>Brittle prompt strings</td><td>Composable modules</td></tr><tr><td>One-off solutions</td><td>Reusable components</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="real-world-use-cases">Real-World Use Cases<a href="https://jagan-shanmugam.github.io/blog/DSPy-Intro#real-world-use-cases" class="hash-link" aria-label="Direct link to Real-World Use Cases" title="Direct link to Real-World Use Cases" translate="no">​</a></h3>
 <ol>
 <li class=""><strong>RAG Systems</strong>: Retrieval + reasoning pipelines - Complex question answering with multiple reasoning steps</li>
@@ -101,7 +101,7 @@ Defining metrics, curating datasets, experimenting with a hypothesis and trackin
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="further-reading">Further Reading<a href="https://jagan-shanmugam.github.io/blog/DSPy-Intro#further-reading" class="hash-link" aria-label="Direct link to Further Reading" title="Direct link to Further Reading" translate="no">​</a></h3>
 <ul>
 <li class="">📚 <a href="https://dspy.ai/" target="_blank" rel="noopener noreferrer" class="">DSPy Documentation</a></li>
-<li class="">💻 <a href="https://github.com/stanfordnlp/dspy" target="_blank" rel="noopener noreferrer" class="">GitHub Repository</a></li>
+<li class="">💻 <a href="https://github.com/stanfordnlp/dspy" target="_blank" rel="noopener noreferrer" class="">GitHub Repo</a></li>
 <li class="">📄 <a href="https://arxiv.org/abs/2310.03714" target="_blank" rel="noopener noreferrer" class="">Research Paper</a></li>
 <li class="">🎓 <a href="https://nlp.stanford.edu/" target="_blank" rel="noopener noreferrer" class="">Stanford NLP Group</a></li>
 </ul>
