@@ -122,7 +122,10 @@ By embracing declarative programming, we can build more reliable, maintainable, 
         <link href="https://jagan-shanmugam.github.io/blog/MCP-Overview"/>
         <updated>2025-03-26T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[An overview of the Model Context Protocol (MCP) by Anthropic - the universal standard for connecting AI models to external data, tools, and real-world actions.]]></summary>
-        <content type="html"><![CDATA[<p>The Model Context Protocol (MCP), introduced by Anthropic, is rapidly becoming the universal standard for connecting AI models to external data, tools, and real-world actions. Think of MCP as the "USB-C port for AI applications," enabling seamless integration between AI agents and a wide variety of data sources and APIs.</p>
+        <content type="html"><![CDATA[<p>Hackathons are in full swing this year and as I wanted to catch up on MCPs, I decided to attend a Hackathon by ToolHouse focused on MCP.
+MCP servers and clients I created are at the end of this post.</p>
+<p>Below I try to summarize my notes for MCP and as it is rather new it might evolve over time. Creating MCP servers is just one prompt away with Claude and I played around in Cline to create a few simple servers first to understand it.
+The Model Context Protocol (MCP) introduced by Anthropic is rapidly becoming the universal standard for connecting AI models to external data, tools, and real-world actions. Think of MCP as the "USB-C port for AI applications," enabling seamless integration between AI agents and a wide variety of data sources and APIs.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-all-the-hype">Why All the Hype?<a href="https://jagan-shanmugam.github.io/blog/MCP-Overview#why-all-the-hype" class="hash-link" aria-label="Direct link to Why All the Hype?" title="Direct link to Why All the Hype?" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>Solving the "N times M Problem"</strong>: MCP flattens the complex web of integrations between many AI clients and many servers/APIs, allowing tool providers to build one MCP server and application developers to connect to any MCP server with a compatible client.</li>
